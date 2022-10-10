@@ -1,0 +1,9 @@
+.know {
+  color: #2194ffcc;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ), 
+    url(bgIMG1)
+      center;
+}
