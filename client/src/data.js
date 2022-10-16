@@ -2,6 +2,7 @@ import img1 from "./images/img1.png";
 import img2 from "./images/img2.png";
 import img3 from "./images/img3.png";
 import img4 from "./images/img4.png";
+import img5 from "./images/img5.png";
 
 import coverImg1 from "./images/coverIMG1.jpg";
 import coverImg2 from "./images/coverIMG2.jpg";
@@ -43,7 +44,7 @@ export const sliderItems = [
       id: 1,
       img: coverImg1,
       title: "SHIRT STYLE!",
-      cat:"women"
+      cat:"mens"
     },
     {
       id: 2,

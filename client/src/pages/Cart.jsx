@@ -236,7 +236,7 @@ const Cart = () => {
                     {/* <Remove onClick={() => handleQuantity("dec")} /> */}
                   </ProductAmountContainer>
                   <ProductPrice>
-                    $ {product.price * product.quantity}
+                  ₹ {product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
