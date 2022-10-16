@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom-v5-compat";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;

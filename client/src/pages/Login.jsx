@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { login } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { Link  as Linked } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
@@ -90,7 +89,7 @@ const Login = () => {
 
   useEffect(() => {
     if (LoggedIn) {
-      return <Redirect to="/" />;
+      return <Linked to="/" />;
     }
   }, [LoggedIn]);
 

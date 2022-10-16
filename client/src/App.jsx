@@ -4,13 +4,8 @@ import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect, Link
-} from "react-router-dom";
-import { CompatRouter } from "react-router-dom-v5-compat";
+import { Routes, Route,  Navigate } from "react-router-dom";
+// import { CompatRouter } from "react-router-dom-v5-compat";
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 
@@ -19,32 +14,17 @@ const App = () => {
 
   return (
     
-    <Router>
-      <CompatRouter>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/products/:category">
-            <ProductList />
-          </Route>
-          <Route path="/product/:id">
-            <Product />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          {/* stripe data is required to use the success */}
-          <Route path="/success">
-            <Success />
-          </Route>
-          <Route path="/login">{user ? <Link to="/" /> : <Login />}</Route>
-          <Route path="/register">
-            {user ? <Link to="/" /> : <Register />}
-          </Route>
-        </Switch>
-      </CompatRouter>
-     </Router>
+    <Routes>
+      <Route exact path="/" element={<Home/>}/>
+      <Route path="/products/:category" element={<ProductList/>}/>
+      <Route path="/product/:id" element={<Product/>}/>
+      <Route path="/cart" element={<Cart/>}/>
+      {/* stripe data is required to use the success */}
+      <Route path="/success" element={<Success/>}/>
+
+      <Route path="/login" element={user ? <Navigate to="/" /> : <Login />}/>
+      <Route path="/register" element={user ? <Navigate to="/" /> : <Register />}/>
+    </Routes>
 
   );
 };

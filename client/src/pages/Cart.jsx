@@ -8,7 +8,8 @@ import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -162,7 +163,9 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
-  const history = useHistory();
+  const history = useNavigate();
+  // const dispatch = useDispatch();
+  // const [quantity, setQuantity] = useState(1);
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -181,7 +184,17 @@ const Cart = () => {
       } catch {}
     };
     stripeToken && makeRequest();
-  }, [stripeToken, cart.total, history]);
+  }, [stripeToken, cart.total, history, cart]);
+
+  // const handleQuantity = (type) => {
+  //   if (type === "dec") {
+  //     quantity > 1 && setQuantity(quantity - 1);
+  //   } else {
+  //     setQuantity(quantity + 1);
+  //   }
+  // };
+
+
   return (
     <Container>
       <Navbar />
@@ -219,7 +232,8 @@ const Cart = () => {
                   <ProductAmountContainer>
                     <Add />
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
+                    <Remove/>
+                    {/* <Remove onClick={() => handleQuantity("dec")} /> */}
                   </ProductAmountContainer>
                   <ProductPrice>
                     $ {product.price * product.quantity}
@@ -237,19 +251,19 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>₹ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>₹ 120.00</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>₹ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>₹ -120.00</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>₹ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Lama Shop"
-              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              name="KAPDE"
+              image="https://www.tcv.com/wp-content/uploads/2016/11/Razorpay_blog_logo.png"
               billingAddress
               shippingAddress
               description={`Your total is $${cart.total}`}
