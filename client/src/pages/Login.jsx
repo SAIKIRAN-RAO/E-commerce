@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { login } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { Link  as Linked } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
     ),
-    url("https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+    url("https://images.unsplash.com/3/www.madebyvadim.com.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1182&q=80")
       center;
   background-size: cover;
   display: flex;
@@ -73,11 +78,23 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
+  // let navigate = useNavigate();
+
+  let LoggedIn = false
 
   const handleClick = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
+    LoggedIn = login(dispatch, { username, password });
   };
+  
+
+  useEffect(() => {
+    if (LoggedIn) {
+      return <Redirect to="/" />;
+    }
+  }, [LoggedIn]);
+
+
   return (
     <Container>
       <Wrapper>
@@ -97,7 +114,7 @@ const Login = () => {
           </Button>
           {error && <Error>Something went wrong...</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <Link><Linked to="/register">CREATE A NEW ACCOUNT</Linked></Link>
         </Form>
       </Wrapper>
     </Container>
