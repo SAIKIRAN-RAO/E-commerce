@@ -8,21 +8,15 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect, Link,
+  Redirect, Link
 } from "react-router-dom";
-// import {
-//   BrowserRouter,
-//   Routes,
-//   Route,
-//   Navigate,
-//   useLocation,
-// } from "react-router-dom";
 import { CompatRouter } from "react-router-dom-v5-compat";
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const user = useSelector((state) => state.user.currentUser);
+  const user = useSelector((state) => state.user.currentUser);  
+
   return (
     
     <Router>
@@ -40,6 +34,7 @@ const App = () => {
           <Route path="/cart">
             <Cart />
           </Route>
+          {/* stripe data is required to use the success */}
           <Route path="/success">
             <Success />
           </Route>
