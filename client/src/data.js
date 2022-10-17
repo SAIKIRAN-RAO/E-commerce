@@ -14,14 +14,14 @@ export const sliderItems = [
       img: img1,
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "f5fafd",
+      bg: "fcf1ed",
     },
     {
       id: 2,
       img: img2,
       title: "AUTUMN COLLECTION",
       desc: "FASHION IS LIKE EATING, YOU SHOULDN'T STICK TO THE SAME MENU",
-      bg: "fcf1ed",
+      bg: "f5fafd",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export const sliderItems = [
       img: img4,
       title: "ALL KIND OF CLOTHES FOR EVERY GEN",
       desc: "YOU CAN HAVE ANYTHING YOU WANT IN LIFE IF YOU DRESS FOR IT",
-      bg: "fbf0f4",
+      bg: "f4f0f4",
     },
   ];
 
