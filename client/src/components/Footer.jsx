@@ -89,7 +89,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo><Link to="/" style={{textDecoration : "none",color:"black"}}> KAPDE</Link></Logo>
+        <Logo><Link to="/" style={{textDecoration : "none",color:"black"}}> E-COMMERCE</Link></Logo>
         <Desc>
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
@@ -111,7 +111,6 @@ const Footer = () => {
         </SocialContainer>
       </Left>
       <Center>
-        <Title>Useful Links</Title>
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
@@ -121,8 +120,6 @@ const Footer = () => {
           <ListItem>My Account</ListItem>
           <ListItem>Order Tracking</ListItem>
           <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
         </List>
       </Center>
       <Right>

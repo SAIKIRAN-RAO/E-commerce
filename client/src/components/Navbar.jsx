@@ -74,7 +74,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
+          <Language>ENG</Language>
           <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />
@@ -82,7 +82,7 @@ const Navbar = () => {
         </Left>
         <Center>
         <Link to="/" style={{textDecoration : "none",color:"black"}}>
-          <Logo>KAPDE</Logo>
+          <Logo>E-COMMERCE</Logo>
           </Link>
         </Center>
         <Right>
