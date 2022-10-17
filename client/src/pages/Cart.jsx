@@ -180,7 +180,8 @@ const Cart = () => {
         });
         history.push("/success", {
           stripeData: res.data,
-          products: cart, });
+          products: cart,
+        });
       } catch {}
     };
     stripeToken && makeRequest();
@@ -193,7 +194,6 @@ const Cart = () => {
   //     setQuantity(quantity + 1);
   //   }
   // };
-
 
   return (
     <Container>
@@ -232,11 +232,11 @@ const Cart = () => {
                   <ProductAmountContainer>
                     <Add />
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove/>
+                    <Remove />
                     {/* <Remove onClick={() => handleQuantity("dec")} /> */}
                   </ProductAmountContainer>
                   <ProductPrice>
-                  ₹ {product.price * product.quantity}
+                    ₹ {product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>

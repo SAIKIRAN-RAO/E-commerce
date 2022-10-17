@@ -9,6 +9,8 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 import { useLayoutEffect } from "react";
+// import {AnimatePresence} from "framer-motion/dist/framer-motion";
+
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -22,6 +24,7 @@ const App = () => {
   };
 
   return (
+    // <AnimatePresence>
     <Wrapper>
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -38,6 +41,7 @@ const App = () => {
         />
       </Routes>
     </Wrapper>
+    // {/* </AnimatePresence> */}
   );
 };
 
